@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>0x01-python-if_else_loops_functions</title>
+
 </head>
 <body>
   <h1>0x01-python-if_else_loops_functions</h1>
