@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""This code defines a class called Square."""
+"""Defines a class Square"""
 
 
 class Square:
     """
-    This class defines the properties of a square. It is based on the code from the 2-square.py file.
+    Class that defines properties of square by: (based on 2-square.py).
 
     Attributes:
-        size: The size attribute represents the length of a side of the square.
+        size: size of a square (1 side).
     """
     def __init__(self, size=0):
-        """The init method initializes new instances of the Square class. It takes a size parameter representing the size of the square.
+        """Creates new instances of square.
 
         Args:
-            size: The size parameter represents the size of the square. It should be an integer greater than or equal to 0.
+            size: size of the square (1 side).
         """
         self.__size = size
 
@@ -25,8 +25,8 @@ class Square:
             self.__size = size
 
     def area(self):
-        """the area method calculates the area of the square."
+        """Calculates the area of square.
 
-        Returns: the current area of the square.
+        Returns: the current square area.
         """
         return self.__size ** 2
