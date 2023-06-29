@@ -1,11 +1,22 @@
 #!/usr/bin/python3
 class Square:
     def __init__(self, size=0, position=(0, 0)):
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
+
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
+        if not isinstance(position, tuple) or len(position) != 2 or \
+                not all(isinstance(val, int) for val in position) or \
+                not all(val >= 0 for val in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
-        return self.__size**2
+        return self.__size ** 2
 
     @property
     def size(self):
@@ -13,24 +24,13 @@ class Square:
 
     @size.setter
     def size(self, value):
-        self.__size = value
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
+
         if value < 0:
             raise ValueError("size must be >= 0")
 
-    def my_print(self):
-        if self.__size == 0:
-            print()
-        else:
-            for y in range(self.__position[1]):
-                print()
-            for i in range(self.__size):
-                for x in range(self.__position[0]):
-                    print(' ', end='')
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
+        self.__size = value
 
     @property
     def position(self):
@@ -38,8 +38,19 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) != tuple or len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2 or \
+                not all(isinstance(val, int) for val in value) or \
+                not all(val >= 0 for val in value):
             raise TypeError("position must be a tuple of 2 positive integers")
-        if any(type(i) != int for i in value) or any(j < 0 for j in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
+
         self.__position = value
+
+    def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__position[1]):
+                print()
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
+
