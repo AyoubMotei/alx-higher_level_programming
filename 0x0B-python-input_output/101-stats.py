@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for parsing log files and generating statistics..
+Module for log parsing scripts.
 """
 
 
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
     def check_match(line):
-        '''Check if the line matches the expected format and update statistics..'''
+        '''Checks for regexp match in line.'''
         try:
             line = line[:-1]
             words = line.split(" ")

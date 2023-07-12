@@ -1,23 +1,44 @@
 #!/usr/bin/python3
-'''Module for the Student class.'''
+"""Student to JSON"""
 
 
 class Student:
-    '''A class representing a student with JSON functionality.'''
+    """Student class definition"""
+
     def __init__(self, first_name, last_name, age):
-        '''Constructor for the Student class.'''
+        """Constructor initializater"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        '''Retrieves a dictionary representation of the Student instance with optional attribute filtering.'''
-        if type(attrs) is list and all([type(x) == str for x in attrs]):
-            return {k: v for k, v in self.__dict__.items() if k in attrs}
-        else:
-            return self.__dict__.copy()
+        """Method to retrieves a dictionary representation
+        if attrs is a list of strings, only attribute names contained
+        in this lists must be retrieved, otherwise, all attributes
+        must be retrieved"""
+
+        result = {}
+
+        if attrs is None:
+            return (self.__dict__)
+
+        for key in attrs:
+            """If not find key in the class return None, for that
+            this class should be transform in dictionary"""
+            value = self.__dict__.get(key)
+            if value is not None:
+                result[key] = value
+        return (result)
 
     def reload_from_json(self, json):
-        '''Updates the attributes of the Student instance using a dictionary.'''
+        """Method that replaces all attributes of the student instance"""
+
+        dict_new = self.__dict__
+
         for key, value in json.items():
-            self.__dict__[key] = value
+            if (dict_new.get(key) == self.first_name):
+                self.first_name = value
+            elif (dict_new.get(key) == self.last_name):
+                self.last_name = value
+            elif (dict_new.get(key) == self.age):
+                self.age = value

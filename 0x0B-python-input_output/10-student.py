@@ -1,30 +1,23 @@
 #!/usr/bin/python3
 """
-    Module for the Student class.
+    Module for class Student
 """
 
 
 class Student:
     """
-         A class that represents a student.
-
-    Attributes:
-        first_name (str): The first name of the student.
-        last_name (str): The last name of the student.
-        age (int): The age of the student.
-
-    Methods:
-        __init__ : Initializes a Student instance.
-        to_json : Retrieves a dictionary representation of the Student instance.
+        A class students that defines a student by:
+        Attributes:
+            first_name (str): name of student.
+            last_name (str): name of student.
+            age (int): age of student.
+        Methods:
+            __init__ - initializes the Student instance.
+            to_json - retrieves dictionary repr of Student instance.
     """
     def __init__(self, first_name, last_name, age):
         """
-        Initializes a Student instance with the provided attributes.
-
-        Args:
-            first_name (str): The first name of the student.
-            last_name (str): The last name of the student.
-            age (int): The age of the student.
+            Initialises Student instance.
         """
         self.first_name = first_name
         self.last_name = last_name
@@ -32,13 +25,9 @@ class Student:
 
     def to_json(self, attr=None):
         """
-        Retrieves a dictionary representation of the Student instance.
-
-        Args:
-            attr (list): A list of attribute names to retrieve. Default is None.
-
-        Returns:
-            dict: A dictionary representation of the Student instance.
+            retrieves a dictionary representation of Student.
+            Args:
+                attr (list): attribute names that are to be retrieved.
         """
 
         if attr is not None:
