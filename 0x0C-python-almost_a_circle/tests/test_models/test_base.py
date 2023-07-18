@@ -1,5 +1,6 @@
-
-dule for the uniitest of the class Base
+#!/usr/bin/python3
+"""
+Module for the uniitest of the class Base
 """
 import models.base as b
 import models.rectangle as r

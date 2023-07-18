@@ -1,5 +1,6 @@
-
-dule for the unittests of the class Rectangle
+#!/usr/bin/python3
+"""
+Module for the unittests of the class Rectangle
 """
 import models.rectangle as r
 import models.base as b

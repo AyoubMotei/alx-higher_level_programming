@@ -1,5 +1,6 @@
-
-dule for the unittest of the class Square
+#!/usr/bin/python3
+"""
+Module for the unittest of the class Square
 """
 import models.square as s
 import models.rectangle as r
