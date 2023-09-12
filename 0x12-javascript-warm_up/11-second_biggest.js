@@ -5,4 +5,3 @@ const secondBiggest = process.argv
   .map(Number)
   .sort((a, b) => b - a)[1];
 console.log(secondBiggest === undefined ? 0 : secondBiggest);
-
