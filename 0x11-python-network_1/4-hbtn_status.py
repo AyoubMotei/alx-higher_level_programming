@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""
-Same as Task 0 but using request package
-"""
-
-import requests
-
+"""  script that fetches https://alx-intranet.hbtn.io/status using requests"""
 
 if __name__ == "__main__":
-    response = requests.get('https://intranet.hbtn.io/status')
+    import requests
+    req = requests.get("https://alx-intranet.hbtn.io/status")
     print("Body response:")
-    print("\t- type: {}".format(type(response.text)))
-    print("\t- content: {}".format(response.text))
+    print(f"\t- type: {type(req.text)}")
+    print(f"\t- content: {req.text}")
