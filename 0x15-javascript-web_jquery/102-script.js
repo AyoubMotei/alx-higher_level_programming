@@ -1,13 +1,9 @@
-$(document).ready(function () {
+const $ = window.$;
+window.onload = function () {
   $('INPUT#btn_translate').click(function () {
-    $('DIV#hello').empty();
-    const len = $('INPUT#language_code').val();
-    $.ajax({
-      type: 'GET',
-      url: 'https://fourtonfish.com/hellosalut/?lang=' + len,
-      success: function (data) {
-        $('DIV#hello').append(data.hello);
-      }
+    const language = $('INPUT#language_code').val();
+    $.get('https://fourtonfish.com/hellosalut/?lang=' + language, function (say, textStatus) {
+      $('DIV#hello').text(say.hello);
     });
   });
-});
+};

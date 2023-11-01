@@ -1,1 +1,1 @@
-# 0x15. JavaScript - Web
+# 0x15. Javascript - Web JQuery

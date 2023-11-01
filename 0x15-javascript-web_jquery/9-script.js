@@ -1,9 +1,3 @@
-$(document).ready(function () {
-  $.ajax({
-    method: 'GET',
-    url: 'https://fourtonfish.com/hellosalut/?lang=fr',
-    success: function (data) {
-      $('DIV#hello').text(data.hello);
-    }
-  });
+$.get('https://fourtonfish.com/hellosalut/?lang=fr', function (fetch) {
+  $('#hello').text(fetch.hello);
 });

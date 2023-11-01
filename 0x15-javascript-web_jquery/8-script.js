@@ -1,9 +1,5 @@
-$.ajax({
-  type: 'GET',
-  url: 'https://swapi-api.alx-tools.com/api/films/?format=json',
-  success: function (data) {
-    $.each(data.results, function (i, film) {
-      $('UL#list_movies').append('<li>' + film.title + '</li>');
-    });
+$.get('https://swapi-api.hbtn.io/api/films/?format=json', function (titles) {
+  for (const i of titles.results) {
+    $('UL#list_movies').append('<li>' + i.title + '</li>');
   }
 });
